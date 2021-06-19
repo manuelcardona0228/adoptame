@@ -12,4 +12,9 @@ class Institution extends Model
     protected $fillable = [
         'name', 'phone', 'email',
     ];
+
+    public function pets()
+    {
+        return $this->hasMany(Pet::class);
+    }
 }

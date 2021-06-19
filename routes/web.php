@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Institution;
+use App\Models\Pet;
+use App\Models\Species;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::get('/species', function () {
+    $institution = Institution::find(1);
+    return $institution->pets;
 });

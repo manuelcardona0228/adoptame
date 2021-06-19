@@ -35,6 +35,7 @@ class CreatePetsTable extends Migration
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -16,4 +16,19 @@ class Pet extends Model
     protected $casts = [
         'date_of_birth' => 'date:mm/YYYY',
     ];
+
+    public function institution()
+    {
+        return $this->belongsTo(Institution::class);
+    }
+
+    public function species()
+    {
+        return $this->belongsTo(Species::class);
+    }
+
+    public function breed()
+    {
+        return $this->belongsTo(Breed::class);
+    }
 }

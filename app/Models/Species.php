@@ -12,4 +12,9 @@ class Species extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function breeds()
+    {
+        return $this->hasMany(Breed::class);
+    }
 }
