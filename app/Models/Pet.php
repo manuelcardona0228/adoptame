@@ -2,19 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pet extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name', 'date_of_birth', 'photo_url', 'species_id', 'breed_id', 'institution_id'
     ];
 
     protected $casts = [
-        'date_of_birth' => 'date:mm/YYYY',
+        'date_of_birth' => 'date:m/Y',
     ];
 
     public function institution()
