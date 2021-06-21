@@ -22,6 +22,6 @@ Route::get('/', function () {
 
 
 Route::get('/species', function () {
-    $institution = Institution::find(1);
-    return $institution->pets;
+    $species = Species::with(['breeds'])->get();
+    return $species;
 });
